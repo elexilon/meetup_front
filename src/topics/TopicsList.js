@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import Title from '../components/Title'
 
 class TopicsList extends PureComponent {
   static propTypes = {
@@ -21,6 +22,9 @@ class TopicsList extends PureComponent {
     return(
 
       <div className="Topics wrapper">
+      <header>
+        <Title content="Topics Top 10" />
+      </header>
       <main>
         { this.props.topics.map(this.renderTopic) }
       </main>

@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import RsvpItem from './RsvpItem'
 import PropTypes from 'prop-types'
+import Title from '../components/Title'
 
 class RsvpList extends PureComponent {
   static propTypes = {
@@ -15,7 +16,10 @@ class RsvpList extends PureComponent {
   render() {
     return(
       <div className="Topics wrapper">
-          { this.props.rsvps.map(this.renderRsvpList) }
+        <header>
+          <Title content="Rsvp list" />
+        </header>
+        { this.props.rsvps.map(this.renderRsvpList) }
       </div>
     )
   }
