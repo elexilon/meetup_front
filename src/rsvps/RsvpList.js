@@ -5,11 +5,10 @@ import Title from '../components/Title'
 
 class RsvpList extends PureComponent {
   static propTypes = {
-    RsvpList: PropTypes.arrayOf(RsvpItem)
+    rsvplist: PropTypes.arrayOf(PropTypes.object).isRequired
   }
 
   renderRsvpList(rsvp, index) {
-    console.log(rsvp)
     return <RsvpItem key={index} { ...rsvp } />
   }
 
@@ -19,7 +18,7 @@ class RsvpList extends PureComponent {
         <header>
           <Title content="Rsvp list" />
         </header>
-        { this.props.rsvps.map(this.renderRsvpList) }
+        { this.props.rsvplist.map(this.renderRsvpList) }
       </div>
     )
   }

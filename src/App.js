@@ -241,7 +241,7 @@ class App extends Component {
             <TopicsList topics={topics} />
           </div>
           <div className="col-sm-6 sidenav">
-            <RsvpList rsvps={rsvps} />
+            <RsvpList rsvplist={rsvps} />
           </div>
         </div>
 
