@@ -1,6 +1,6 @@
 import { UPDATE_TOPICS } from '../actions/topics/UpdateTopics'
 
-const topics = [
+export const topics = [
     {
       topic: '11111111',
       count: 4,
@@ -22,7 +22,7 @@ const topics = [
 export default function (state = topics, { type, payload } = {}) {
 	switch (type) {
     case UPDATE_TOPICS:
-      return state
+      return payload
       // return state.map((player) => {
       //   if (player.id !== action.payload) return player
       //   return { ...player, score: player.score+1 }

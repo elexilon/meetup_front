@@ -1,7 +1,7 @@
-import Rsvps from './rsvps'
-import Topics from './topics'
+import rsvps from './rsvps'
+import topics from './topics'
 
 export default {
-	Rsvps,
-	Topics,
+	rsvps,
+	topics,
 }

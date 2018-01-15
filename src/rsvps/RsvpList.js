@@ -2,10 +2,11 @@ import React, { PureComponent } from 'react'
 import RsvpItem from './RsvpItem'
 import PropTypes from 'prop-types'
 import Title from '../components/Title'
+import { connect } from 'react-redux'
 
-class RsvpList extends PureComponent {
+export class RsvpList extends PureComponent {
   static propTypes = {
-    rsvplist: PropTypes.arrayOf(PropTypes.object).isRequired
+    rsvps: PropTypes.arrayOf(PropTypes.object).isRequired
   }
 
   renderRsvpList(rsvp, index) {
@@ -18,10 +19,14 @@ class RsvpList extends PureComponent {
         <header>
           <Title content="Rsvp list" />
         </header>
-        { this.props.rsvplist.map(this.renderRsvpList) }
+        { this.props.rsvps.map(this.renderRsvpList) }
       </div>
     )
   }
 }
 
-export default RsvpList
+const mapStateToProps = ({ rsvps }) => ({
+  rsvps
+})
+
+export default connect(mapStateToProps)(RsvpList)

@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import Title from '../components/Title'
+import { connect } from 'react-redux'
 
-class TopicsList extends PureComponent {
+export class TopicsList extends PureComponent {
   static propTypes = {
 	  topics: PropTypes.arrayOf(PropTypes.shape({
 		  topic: PropTypes.string.isRequired,
@@ -33,4 +34,8 @@ class TopicsList extends PureComponent {
   }
 }
 
-export default TopicsList
+const mapStateToProps = ({ topics }) => ({
+  topics
+})
+
+export default connect(mapStateToProps)(TopicsList)

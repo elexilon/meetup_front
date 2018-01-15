@@ -1,6 +1,6 @@
 import { ADD_RSVP } from '../actions/rsvps/AddRsvp'
 
-const rsvps = [
+export const rsvps = [
 	{
 	  "venue": {
 	    "venue_name": "L'Albero dei Gelati",
@@ -199,14 +199,16 @@ const rsvps = [
 	}
 ]
 
+
 export default function (state = rsvps, { type, payload } = {}) {
 	switch (type) {
 		case ADD_RSVP:
-			return state
-			// return state.map((player) => {
-			//   if (player.id !== action.payload) return player
-			//   return { ...player, score: player.score+1 }
-			// })
+			const rsvp = payload
+			if(state.some(rsvp => rsvp.rsvp_id === payload.rsvp_id))
+			{
+				return state
+			}
+			return [rsvp, ...state].slice(0,10)
 		default:
 			return state
 	}
